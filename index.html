@@ -204,7 +204,7 @@ new Snow();
 
 // Simple CountDown Clock
 
-const comingdate = new Date("Oct 1, 2018 00:00:00");
+const comingdate = new Date("Oct 1, 2019 00:00:00");
 
 const d = document.getElementById("d");
 const h = document.getElementById("h");
@@ -219,12 +219,12 @@ const countdown = setInterval(() => {
   const mins  = Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
   const secs  = Math.floor((des % (1000 * 60)) / 1000);
 
-  d.innerHTML = getTrueNumber(days) < 0 ? 0 : getTrueNumber(days);
-  h.innerHTML = getTrueNumber(hours) < 0 ? 0 : getTrueNumber(hours);
-  m.innerHTML = getTrueNumber(mins) < 0 ? 0 : getTrueNumber(mins);
-  s.innerHTML = getTrueNumber(secs) < 0 ? 0 : getTrueNumber(secs);
+  d.innerHTML = getTrueNumber(days);
+  h.innerHTML = getTrueNumber(hours);
+  m.innerHTML = getTrueNumber(mins);
+  s.innerHTML = getTrueNumber(secs);
 
-  if (x <= 0) clearInterval(x);
+  if (x <= 0) location.href='img/hello.html';
 }, 1000);
 
 const getTrueNumber = x => (x < 10 ? "0" + x : x);
