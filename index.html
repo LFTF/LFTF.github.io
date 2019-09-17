@@ -214,10 +214,10 @@ const s = document.getElementById("s");
 const countdown = setInterval(() => {
   const now   = new Date();
   const des   = comingdate.getTime() - now.getTime();
-  const days  = Math.floor(des / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((des % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins  = Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
-  const secs  = Math.floor((des % (1000 * 60)) / 1000);
+  const days  = des <= 0 ? 0 : Math.floor(des / (1000 * 60 * 60 * 24));
+  const hours = des <= 0 ? 0 : Math.floor((des % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins  = des <= 0 ? 0 : Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
+  const secs  = des <= 0 ? 0 : Math.floor((des % (1000 * 60)) / 1000);
 
   d.innerHTML = getTrueNumber(days);
   h.innerHTML = getTrueNumber(hours);
@@ -225,7 +225,7 @@ const countdown = setInterval(() => {
   s.innerHTML = getTrueNumber(secs);
 
   if (des <= 0){
-    location.href = "http://www.baidu.com";
+    location.href = "img/hello.html";
     clearInterval(x);
   }
 }, 1000);
