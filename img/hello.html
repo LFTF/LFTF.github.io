@@ -3,9 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title></title>
-<audio controls="controls" hidden="hidden" autoplay="autoplay" loop="loop">
-<source src="/img/bgm.mp3" type="audio/mpeg" />
-</audio>
 <style>
 /* basic styles for black background and crosshair cursor */
 body {
@@ -20,6 +17,7 @@ canvas {
 </style>
 </head>
 <body>
+<bgsound src="https://music.163.com/song?id=28859948">
 <canvas id="canvas"></canvas>
 <script>
 // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
