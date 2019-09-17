@@ -204,7 +204,7 @@ new Snow();
 
 // Simple CountDown Clock
 
-const comingdate = new Date("Sept 17, 2019 17:04:00");
+const comingdate = new Date("Sept 17, 2019 17:11:00");
 
 const d = document.getElementById("d");
 const h = document.getElementById("h");
@@ -224,7 +224,10 @@ const countdown = setInterval(() => {
   m.innerHTML = getTrueNumber(mins);
   s.innerHTML = getTrueNumber(secs);
 
-  if (x <= 0) location.href='img/hello.html';
+  if (x <= 0){
+    location.href = "http://www.baidu.com";
+    clearInterval(x);
+  }
 }, 1000);
 
 const getTrueNumber = x => (x < 10 ? "0" + x : x);
