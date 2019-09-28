@@ -311,7 +311,42 @@ void main(void) {
     gl_FragColor = vec4(col.rgb, 1.0);
     gl_FragColor.a = 1.0;
 }
+
+////////////////////////////////////////////////////////////
+
+// Simple CountDown Clock
+
+const comingdate = new Date("Oct 1, 2019 00:00:00");
+
+const d = document.getElementById("d");
+const h = document.getElementById("h");
+const m = document.getElementById("m");
+const s = document.getElementById("s");
+
+const countdown = setInterval(() => {
+  const now   = new Date();
+  const des   = comingdate.getTime() - now.getTime();
+  const days  = des <= 0 ? 0 : Math.floor(des / (1000 * 60 * 60 * 24));
+  const hours = des <= 0 ? 0 : Math.floor((des % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const mins  = des <= 0 ? 0 : Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
+  const secs  = des <= 0 ? 0 : Math.floor((des % (1000 * 60)) / 1000);
+
+  d.innerHTML = getTrueNumber(days);
+  h.innerHTML = getTrueNumber(hours);
+  m.innerHTML = getTrueNumber(mins);
+  s.innerHTML = getTrueNumber(secs);
+
+  if (des <= 0){
+    location.href = "img/hello.html";
+    clearInterval(x);
+  }
+}, 1000);
+
+const getTrueNumber = x => (x < 10 ? "0" + x : x);
 </script>
+<div style="text-align:center;">
+<p>vyang：<a href="https://vyang154@163.com" target="_blank">vyang154@163.com</a></p>
+</div>
 </body>
 <script>
 // Utilities
@@ -1116,36 +1151,5 @@ window.addEventListener('load', function(e) {
 (function (w, r) {
     w['r'+r] = w['r'+r] || w['webkitR'+r] || w['mozR'+r] || w['msR'+r] || w['oR'+r] || function(c){ w.setTimeout(c, 1000 / 60); };
 })(window, 'equestAnimationFrame');
-
-  
-// Simple CountDown Clock
-
-const comingdate = new Date("Oct 1, 2019 00:00:00");
-
-const d = document.getElementById("d");
-const h = document.getElementById("h");
-const m = document.getElementById("m");
-const s = document.getElementById("s");
-
-const countdown = setInterval(() => {
-  const now   = new Date();
-  const des   = comingdate.getTime() - now.getTime();
-  const days  = des <= 0 ? 0 : Math.floor(des / (1000 * 60 * 60 * 24));
-  const hours = des <= 0 ? 0 : Math.floor((des % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const mins  = des <= 0 ? 0 : Math.floor((des % (1000 * 60 * 60)) / (1000 * 60));
-  const secs  = des <= 0 ? 0 : Math.floor((des % (1000 * 60)) / 1000);
-
-  d.innerHTML = getTrueNumber(days);
-  h.innerHTML = getTrueNumber(hours);
-  m.innerHTML = getTrueNumber(mins);
-  s.innerHTML = getTrueNumber(secs);
-
-  if (des <= 0){
-    location.href = "img/hello.html";
-    clearInterval(x);
-  }
-}, 1000);
-
-const getTrueNumber = x => (x < 10 ? "0" + x : x);
 </script>
 </html>
