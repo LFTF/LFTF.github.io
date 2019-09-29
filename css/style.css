@@ -30,7 +30,8 @@ div#background{
     -moz-animation: dd 100s linear infinite;
     -o-animation: dd 100s linear infinite;
     animation: dd 100s linear infinite;
-    background-size: cover;
+    /*background-size: cover;*/
+    background-size: 1980px 1020px;
 }
 div#midground{
     background: url("/img/midground.png");
