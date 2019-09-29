@@ -59,7 +59,7 @@ div#top{
 @-webkit-keyframes cc {
     from{
         background-position: 0 0;
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
     to{
         background-position: 600% 0;
@@ -68,7 +68,7 @@ div#top{
 @-o-keyframes cc {
     from{
         background-position: 0 0;
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
     to{
         background-position: 600% 0;
@@ -77,7 +77,7 @@ div#top{
 @-moz-keyframes cc {
     from{
         background-position: 0 0;
-        transform: translateY(10px);
+        transform: translateY(5px);
     }
     to{
         background-position: 600% 0;
