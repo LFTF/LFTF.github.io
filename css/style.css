@@ -31,7 +31,7 @@ div#background{
     -o-animation: dd 100s linear infinite;
     animation: dd 100s linear infinite;
     /*background-size: cover;*/
-    background-size: contain;
+    background-size: 100% 100%;
 }
 div#midground{
     background: url("/img/midground.png");
